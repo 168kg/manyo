@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습_마녀공장</title>
+    <link rel="stylesheet" href="css/복습_마녀공장.css">
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+
+            $('.menu_open').click(function(){
+                $('.mobile_gnb').animate({
+                    'right' : '0'
+                }, 700);
+            });// .menu_open 클릭
+
+            $('.menu_close').click(function(){
+                $('.mobile_gnb').animate({
+                    'right' : '-100%'
+                })
+            });// .menu_close 클릭
+
+            $('.mobile_gnb .gnb .depth01 > a').click(function(){
+                if($(this).next().css('display') == 'none'){
+                    $('.mobile_gnb .gnb .depth01 .depth02').slideUp()
+                    $(this).next().slideDown()
+                } else {
+                    $('.mobile_gnb .gnb .depth01 .depth02').slideUp()
+                }
+            })
+            
+            let tab = $('.cont01 .inner .tab li')
+            $(tab).click(function(){
+                $('.list').removeClass('on');
+                $('.list').eq($(this).index()).addClass('on')
+
+                $(tab).removeClass('on');
+                $(this).addClass('on');
+            });
+
+            $('ul li a').click(function(e){
+                e.preventDefault();
+            })
+
+        }); //제이쿼리 끝
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="inner">
+            <h1>
+                <img src="img/02 마녀공장img/마녀공장로고.svg" alt="">
+            </h1>
+
+            <nav class="pc">
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">전체</a>
+                        <ul class="depth02">
+                            <li><a href="#">클렌징</a></li>
+                            <li><a href="#">스킨, 토너, 미스트</a></li>
+                            <li><a href="#">앰플, 에센스</a></li>
+                            <li><a href="#">로션, 크림, 아이크림</a></li>
+                            <li><a href="#">선케어</a></li>
+                            <li><a href="#">마스크, 팩</a></li>
+                            <li><a href="#">헤어, 바디</a></li>
+                            <li><a href="#">립, 핸드</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">이벤트</a>
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">베스트</a>
+                        <ul class="depth02">
+                            <li><a href="#">피부타입별</a></li>
+                            <li><a href="#">카테고리별</a></li>
+                            <li><a href="#">라인별</a></li>
+                            <li><a href="#">브랜드별</a></li>
+                            <li><a href="#">신상품</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">특가</a>
+                        <ul class="depth02">
+                            <li><a href="#">피부타입별</a></li>
+                            <li><a href="#">카테고리별</a></li>
+                            <li><a href="#">라인별</a></li>
+                            <li><a href="#">브랜드별</a></li>
+                            <li><a href="#">신상품</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">브랜드</a>
+                        <ul class="depth02">
+                            <li><a href="#">브랜드스토리</a></li>
+                            <li><a href="#">성분철학</a></li>
+                            <li><a href="#">사회공헌</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                </ul><!-- .gnb end -->
+            </nav><!-- .pc end -->
+
+            <div class="mobile menu_open">
+                <img src="img/02 마녀공장img/menu.png" alt="">
+            </div><!-- .menu_open end -->
+
+            <nav class="mobile mobile_gnb">
+                <div class="menu_close">
+                    <p>메뉴닫기</p>
+                </div><!-- .menu_close end -->
+
+                <ul class="gnb">
+                    <li class="depth01">
+                        <a href="#">전체</a>
+                        <ul class="depth02">
+                            <li><a href="#">클렌징</a></li>
+                            <li><a href="#">스킨, 토너, 미스트</a></li>
+                            <li><a href="#">앰플, 에센스</a></li>
+                            <li><a href="#">로션, 크림, 아이크림</a></li>
+                            <li><a href="#">선케어</a></li>
+                            <li><a href="#">마스크, 팩</a></li>
+                            <li><a href="#">헤어, 바디</a></li>
+                            <li><a href="#">립, 핸드</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">이벤트</a>
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">베스트</a>
+                        <ul class="depth02">
+                            <li><a href="#">피부타입별</a></li>
+                            <li><a href="#">카테고리별</a></li>
+                            <li><a href="#">라인별</a></li>
+                            <li><a href="#">브랜드별</a></li>
+                            <li><a href="#">신상품</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">특가</a>
+                        <ul class="depth02">
+                            <li><a href="#">피부타입별</a></li>
+                            <li><a href="#">카테고리별</a></li>
+                            <li><a href="#">라인별</a></li>
+                            <li><a href="#">브랜드별</a></li>
+                            <li><a href="#">신상품</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                    <li class="depth01">
+                        <a href="#">브랜드</a>
+                        <ul class="depth02">
+                            <li><a href="#">브랜드스토리</a></li>
+                            <li><a href="#">성분철학</a></li>
+                            <li><a href="#">사회공헌</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li><!-- .depth01 end -->
+
+                </ul><!-- .gnb end -->
+            </nav><!-- .mobile gnb end -->
+        </div><!-- .inner end -->
+    </header>
+
+    <section class="main_visual">
+        <img src="img/02 마녀공장img/41ebcd316056617b4e4796d8183e5170_87822.jpg" alt="">
+        <div class="txt">
+            <h3>히더 진정 라인 런칭 기념<br />Special Week</h3>
+            <h4>딱 일주일만, 최대 70% 할인 쿠폰 증정</h4>
+            <p>2023.04.07 am 10:00 - 04.14 am 10:00</p>
+            <span>자세히보기</span>
+        </div><!-- .txt end -->
+    </section><!-- .main_visual end -->
+
+    <section class="cont01">
+        <div class="inner">
+
+            <div class="title">
+                <span>전체보기</span>
+                <h3>best sellers :</h3>
+            </div><!-- .title end -->
+
+            <ul class="tab">
+                <li class="on"><a href="#">전체</a></li>
+                <li><a href="#">클렌징</a></li>
+                <li><a href="#">스킨, 토너, 미스트</a></li>
+                <li><a href="#">앰플, 에센스, 오일</a></li>
+                <li><a href="#">로션, 크림, 아이크림</a></li>
+                <li><a href="#">마스크, 팩</a></li>
+                <li><a href="#">헤어, 바디</a></li>
+            </ul><!-- .tab end -->
+
+            <div class="list on">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_1.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+            <div class="list">
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_2.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_3.png" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+
+                </div><!-- .item end -->
+                <div class="item">
+                    <img src="img/02 마녀공장img/cont01_4.jpg" alt="">
+                    <div class="txt">
+                        <h4>[대용량] 퓨어 클렌징 오일 400ml</h4>
+                        <div>
+                            <p>49,000원</p>
+                            <strong>21,990원 <span>55%</span></strong>
+                        </div>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+            </div><!-- .list end -->
+
+        </div><!-- .inner end -->
+    </section><!-- .cont01 end -->
+
+    <section class="cont02">
+        <div class="inner">
+            <div class="title">
+                <h3>brand :</h3>
+                <p>마녀공장을 만나는 순간<br/>시작되는 새로운 당신.</p>
+                <span>전체보기</span>
+            </div><!-- .title end -->
+
+            <div class="list">
+                <div class="item">
+                    <img src="img/02 마녀공장img/brand01.jpg" alt="">
+                    <div class="txt">
+                        <h4>about ma:nyo</h4>
+                        <p>브랜드 스토리</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+
+                <div class="item">
+                    <img src="img/02 마녀공장img/brand02.jpg" alt="">
+                    <div class="txt">
+                        <h4>of ma:nyo</h4>
+                        <p>성분 철학</p>
+                    </div><!-- .txt end -->
+                </div><!-- .item end -->
+            </div><!-- .list end -->
+        </div><!-- .inner end -->
+    </section><!-- .cont02 end -->
+
+    <footer>
+       <p>COPYRIGHT © MANYOFACTORY ALL RIGHTS RESERVED.</p> 
+    </footer>
+</body>
+
+</html>
